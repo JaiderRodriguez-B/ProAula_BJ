@@ -15,6 +15,7 @@ public class Cobrador extends javax.swing.JFrame {
      */
     public Cobrador() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -95,6 +96,12 @@ public class Cobrador extends javax.swing.JFrame {
 
         imgVolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/volver x24.png"))); // NOI18N
+        imgVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        imgVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgVolverMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelVolverLayout = new javax.swing.GroupLayout(panelVolver);
         panelVolver.setLayout(panelVolverLayout);
@@ -507,6 +514,12 @@ public class Cobrador extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void imgVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgVolverMouseClicked
+        Login abrir = new Login();
+        abrir.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_imgVolverMouseClicked
 
     /**
      * @param args the command line arguments

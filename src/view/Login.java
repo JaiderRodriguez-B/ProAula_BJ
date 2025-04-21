@@ -4,6 +4,7 @@
  */
 package view;
 
+import javax.swing.*;
 /**
  *
  * @author conta
@@ -15,6 +16,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -36,17 +38,16 @@ public class Login extends javax.swing.JFrame {
         btnIngesar = new javax.swing.JPanel();
         etiIngresar = new javax.swing.JLabel();
         etiCrearUsuario = new javax.swing.JLabel();
+        cbxRoles = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Background.setBackground(new java.awt.Color(164, 180, 101));
-        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         imagenLogin.setForeground(new java.awt.Color(98, 111, 71));
         imagenLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imagenLogin.setText("Imagen Login");
         imagenLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(98, 111, 71)));
-        Background.add(imagenLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 310, 410));
 
         backForm.setBackground(new java.awt.Color(254, 250, 224));
         backForm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 207, 80), 5));
@@ -102,6 +103,12 @@ public class Login extends javax.swing.JFrame {
         etiIngresar.setForeground(new java.awt.Color(254, 250, 224));
         etiIngresar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiIngresar.setText("INGRESAR");
+        etiIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        etiIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                etiIngresarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout btnIngesarLayout = new javax.swing.GroupLayout(btnIngesar);
         btnIngesar.setLayout(btnIngesarLayout);
@@ -109,7 +116,7 @@ public class Login extends javax.swing.JFrame {
             btnIngesarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btnIngesarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(etiIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(etiIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btnIngesarLayout.setVerticalGroup(
@@ -125,19 +132,25 @@ public class Login extends javax.swing.JFrame {
         etiCrearUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         etiCrearUsuario.setText("Crear nuevo usuario");
 
+        cbxRoles.setBackground(new java.awt.Color(98, 111, 71));
+        cbxRoles.setFont(new java.awt.Font("Gill Sans Ultra Bold Condensed", 0, 12)); // NOI18N
+        cbxRoles.setForeground(new java.awt.Color(254, 250, 224));
+        cbxRoles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir rol", "Prestamista", "Deudor", "Cobrador" }));
+
         javax.swing.GroupLayout backFormLayout = new javax.swing.GroupLayout(backForm);
         backForm.setLayout(backFormLayout);
         backFormLayout.setHorizontalGroup(
             backFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backFormLayout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
-                .addGroup(backFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(BackgraundImg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtContraseña)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                    .addGroup(backFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(etiCrearUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                        .addComponent(btnIngesar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(50, Short.MAX_VALUE)
+                .addGroup(backFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(BackgraundImg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtContraseña)
+                        .addComponent(txtUsuario)
+                        .addComponent(etiCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                        .addComponent(btnIngesar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxRoles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16))
         );
         backFormLayout.setVerticalGroup(
@@ -145,40 +158,90 @@ public class Login extends javax.swing.JFrame {
             .addGroup(backFormLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(BackgraundImg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(24, 24, 24)
+                .addComponent(cbxRoles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnIngesar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(etiCrearUsuario)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Background.add(backForm, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 290, 410));
+        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
+        Background.setLayout(BackgroundLayout);
+        BackgroundLayout.setHorizontalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(imagenLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addComponent(backForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        BackgroundLayout.setVerticalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addComponent(backForm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(imagenLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
-        // TODO add your handling code here:
+        if (txtUsuario.getText().equals("Usuario")){
+            txtUsuario.setText("");
+        }
+        if(String.valueOf(txtContraseña.getPassword()).isEmpty()){
+            txtContraseña.setText("Contraseña");
+        }
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void txtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaActionPerformed
-        // TODO add your handling code here:
+        if(txtUsuario.getText().isEmpty()){
+            txtUsuario.setText("Usuario");
+        }
+        if(String.valueOf(txtContraseña.getPassword()).equals("Contraseña")){
+            txtContraseña.setText("");
+        }
     }//GEN-LAST:event_txtContraseñaActionPerformed
+
+    private void etiIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etiIngresarMouseClicked
+        if(cbxRoles.getSelectedItem().equals("Elegir rol")){
+            JOptionPane.showMessageDialog(null, "Elija un rol","Advertencia",JOptionPane.ERROR_MESSAGE);
+        }else if(cbxRoles.getSelectedItem().equals("Prestamista")){
+            Prestamista abrir = new Prestamista();
+            abrir.setVisible(true);
+            dispose();
+        }else if(cbxRoles.getSelectedItem().equals("Deudor")){
+            Deudor abrir = new Deudor();
+            abrir.setVisible(true);
+            dispose();
+        }else if(cbxRoles.getSelectedItem().equals("Cobrador")){
+            Cobrador abrir = new Cobrador();
+            abrir.setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_etiIngresarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -220,6 +283,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel Background;
     private javax.swing.JPanel backForm;
     private javax.swing.JPanel btnIngesar;
+    private javax.swing.JComboBox<String> cbxRoles;
     private javax.swing.JLabel etiCrearUsuario;
     private javax.swing.JLabel etiIngresar;
     private javax.swing.JLabel imagenLogin;
