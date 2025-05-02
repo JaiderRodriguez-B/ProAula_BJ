@@ -80,6 +80,4 @@ public class Usuario {
     public void setContraseña(String Contraseña) {
         this.Contraseña = Contraseña;
     }
-
-
 }

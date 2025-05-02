@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/JAIDER/Universidad_/PROYECTOS%20NETBEANS/ProAula/ProAula_BJ/src/clases/Pagos.java</file>
-            <file>file:/D:/JAIDER/Universidad_/PROYECTOS%20NETBEANS/ProAula/ProAula_BJ/src/view/Login.java</file>
-            <file>file:/D:/JAIDER/Universidad_/PROYECTOS%20NETBEANS/ProAula/ProAula_BJ/src/clases/Prestamista.java</file>
-            <file>file:/D:/JAIDER/Universidad_/PROYECTOS%20NETBEANS/ProAula/ProAula_BJ/src/clases/Deudor.java</file>
-            <file>file:/D:/JAIDER/Universidad_/PROYECTOS%20NETBEANS/ProAula/ProAula_BJ/src/clases/Prestamo.java</file>
-            <file>file:/D:/JAIDER/Universidad_/PROYECTOS%20NETBEANS/ProAula/ProAula_BJ/src/clases/Usuario.java</file>
+            <file>file:/C:/Users/Boris/OneDrive/Escritorio/ProAula_BJ/src/view/Prestamista.java</file>
+            <file>file:/C:/Users/Boris/OneDrive/Escritorio/ProAula_BJ/src/Data/Prestamistas.json</file>
+            <file>file:/C:/Users/Boris/OneDrive/Escritorio/ProAula_BJ/src/clases/Prestamista.java</file>
+            <file>file:/C:/Users/Boris/OneDrive/Escritorio/ProAula_BJ/src/DAO/DeudorDAO.java</file>
+            <file>file:/C:/Users/Boris/OneDrive/Escritorio/ProAula_BJ/src/DAO/PrestamistaDAO.java</file>
+            <file>file:/C:/Users/Boris/OneDrive/Escritorio/ProAula_BJ/src/clases/Prestamo.java</file>
+            <file>file:/C:/Users/Boris/OneDrive/Escritorio/ProAula_BJ/src/clases/Deudor.java</file>
+            <file>file:/C:/Users/Boris/OneDrive/Escritorio/ProAula_BJ/src/clases/Usuario.java</file>
         </group>
     </open-files>
 </project-private>
