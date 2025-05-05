@@ -8,15 +8,23 @@ package view;
  *
  * @author conta
  */
-public class Cobrador extends javax.swing.JFrame {
 
+public class Cobrador extends javax.swing.JFrame {
+    
+    String Deudores[] = {"DEUDOR 1","DEUDOR 2","DEUDOR 3","DEUDOR 4","DEUDOR 5","DEUDOR 6"};
     /**
      * Creates new form Cobrador
      */
-    public Cobrador() {
+    public Cobrador(String CobradorName) {
         initComponents();
         setLocationRelativeTo(null);
+        etiNombreCobrador.setText(CobradorName);
     }
+
+    public Cobrador(){
+        initComponents();
+        setLocationRelativeTo(null);
+    }   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,29 +43,23 @@ public class Cobrador extends javax.swing.JFrame {
         panelVolver = new javax.swing.JPanel();
         imgVolver = new javax.swing.JLabel();
         bkgCuerpo = new javax.swing.JPanel();
-        barraPrestamos = new javax.swing.JPanel();
-        panelPrestamos = new javax.swing.JPanel();
-        etiPrestamos = new javax.swing.JLabel();
-        cobrador_prestamo1 = new javax.swing.JPanel();
-        etiPrestamo_c1 = new javax.swing.JLabel();
-        cobrador_prestamo2 = new javax.swing.JPanel();
-        etiPrestamo_c2 = new javax.swing.JLabel();
-        cobrador_prestamo3 = new javax.swing.JPanel();
-        etiPrestamo_c3 = new javax.swing.JLabel();
-        cobrador_prestamo4 = new javax.swing.JPanel();
-        etiPrestamo_c4 = new javax.swing.JLabel();
-        cobrador_prestamo5 = new javax.swing.JPanel();
-        etiPrestamo_c5 = new javax.swing.JLabel();
-        cobrador_prestamo6 = new javax.swing.JPanel();
-        etiPrestamo_c6 = new javax.swing.JLabel();
         panelBackgroundDescripcion = new javax.swing.JPanel();
         etiNombreDeuAsig = new javax.swing.JLabel();
         panelDescripcion = new javax.swing.JPanel();
         etiTutuloDescripcion = new javax.swing.JLabel();
-        etiDescripcionPrestamo = new javax.swing.JLabel();
+        etiNombrePrestamista = new javax.swing.JLabel();
+        etiCuotaActual = new javax.swing.JLabel();
+        etiNumeroCueotas = new javax.swing.JLabel();
+        etiDireccion = new javax.swing.JLabel();
+        etiValorCuota = new javax.swing.JLabel();
         panelTotalPrestamo = new javax.swing.JPanel();
         etiValorTotalPrestamo = new javax.swing.JLabel();
         etiTotalDeprestamo = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        etiNombreCobrador = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menuBuscar_c = new javax.swing.JMenu();
+        menuItemBuscarPrestamos = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,7 +127,7 @@ public class Cobrador extends javax.swing.JFrame {
             .addGroup(bkgHeaderLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(panelVolver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(imgUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(panelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,212 +150,6 @@ public class Cobrador extends javax.swing.JFrame {
 
         bkgCuerpo.setBackground(new java.awt.Color(98, 111, 71));
 
-        barraPrestamos.setBackground(new java.awt.Color(254, 250, 224));
-
-        panelPrestamos.setBackground(new java.awt.Color(164, 180, 101));
-
-        etiPrestamos.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 12)); // NOI18N
-        etiPrestamos.setForeground(new java.awt.Color(254, 250, 224));
-        etiPrestamos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiPrestamos.setText("PRESTAMOS");
-
-        javax.swing.GroupLayout panelPrestamosLayout = new javax.swing.GroupLayout(panelPrestamos);
-        panelPrestamos.setLayout(panelPrestamosLayout);
-        panelPrestamosLayout.setHorizontalGroup(
-            panelPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPrestamosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        panelPrestamosLayout.setVerticalGroup(
-            panelPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelPrestamosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        cobrador_prestamo1.setBackground(new java.awt.Color(255, 207, 80));
-
-        etiPrestamo_c1.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 12)); // NOI18N
-        etiPrestamo_c1.setForeground(new java.awt.Color(98, 111, 71));
-        etiPrestamo_c1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiPrestamo_c1.setText("Prestamo 1");
-
-        javax.swing.GroupLayout cobrador_prestamo1Layout = new javax.swing.GroupLayout(cobrador_prestamo1);
-        cobrador_prestamo1.setLayout(cobrador_prestamo1Layout);
-        cobrador_prestamo1Layout.setHorizontalGroup(
-            cobrador_prestamo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        cobrador_prestamo1Layout.setVerticalGroup(
-            cobrador_prestamo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c1, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        cobrador_prestamo2.setBackground(new java.awt.Color(255, 207, 80));
-
-        etiPrestamo_c2.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 12)); // NOI18N
-        etiPrestamo_c2.setForeground(new java.awt.Color(98, 111, 71));
-        etiPrestamo_c2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiPrestamo_c2.setText("Prestamo 2");
-
-        javax.swing.GroupLayout cobrador_prestamo2Layout = new javax.swing.GroupLayout(cobrador_prestamo2);
-        cobrador_prestamo2.setLayout(cobrador_prestamo2Layout);
-        cobrador_prestamo2Layout.setHorizontalGroup(
-            cobrador_prestamo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        cobrador_prestamo2Layout.setVerticalGroup(
-            cobrador_prestamo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c2, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        cobrador_prestamo3.setBackground(new java.awt.Color(255, 207, 80));
-
-        etiPrestamo_c3.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 12)); // NOI18N
-        etiPrestamo_c3.setForeground(new java.awt.Color(98, 111, 71));
-        etiPrestamo_c3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiPrestamo_c3.setText("Prestamo 3");
-
-        javax.swing.GroupLayout cobrador_prestamo3Layout = new javax.swing.GroupLayout(cobrador_prestamo3);
-        cobrador_prestamo3.setLayout(cobrador_prestamo3Layout);
-        cobrador_prestamo3Layout.setHorizontalGroup(
-            cobrador_prestamo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        cobrador_prestamo3Layout.setVerticalGroup(
-            cobrador_prestamo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c3, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        cobrador_prestamo4.setBackground(new java.awt.Color(255, 207, 80));
-
-        etiPrestamo_c4.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 12)); // NOI18N
-        etiPrestamo_c4.setForeground(new java.awt.Color(98, 111, 71));
-        etiPrestamo_c4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiPrestamo_c4.setText("Prestamo 4");
-
-        javax.swing.GroupLayout cobrador_prestamo4Layout = new javax.swing.GroupLayout(cobrador_prestamo4);
-        cobrador_prestamo4.setLayout(cobrador_prestamo4Layout);
-        cobrador_prestamo4Layout.setHorizontalGroup(
-            cobrador_prestamo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        cobrador_prestamo4Layout.setVerticalGroup(
-            cobrador_prestamo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c4, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        cobrador_prestamo5.setBackground(new java.awt.Color(255, 207, 80));
-
-        etiPrestamo_c5.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 12)); // NOI18N
-        etiPrestamo_c5.setForeground(new java.awt.Color(98, 111, 71));
-        etiPrestamo_c5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiPrestamo_c5.setText("Prestamo 5");
-
-        javax.swing.GroupLayout cobrador_prestamo5Layout = new javax.swing.GroupLayout(cobrador_prestamo5);
-        cobrador_prestamo5.setLayout(cobrador_prestamo5Layout);
-        cobrador_prestamo5Layout.setHorizontalGroup(
-            cobrador_prestamo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        cobrador_prestamo5Layout.setVerticalGroup(
-            cobrador_prestamo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c5, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        cobrador_prestamo6.setBackground(new java.awt.Color(255, 207, 80));
-
-        etiPrestamo_c6.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 12)); // NOI18N
-        etiPrestamo_c6.setForeground(new java.awt.Color(98, 111, 71));
-        etiPrestamo_c6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiPrestamo_c6.setText("Prestamo 6");
-
-        javax.swing.GroupLayout cobrador_prestamo6Layout = new javax.swing.GroupLayout(cobrador_prestamo6);
-        cobrador_prestamo6.setLayout(cobrador_prestamo6Layout);
-        cobrador_prestamo6Layout.setHorizontalGroup(
-            cobrador_prestamo6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        cobrador_prestamo6Layout.setVerticalGroup(
-            cobrador_prestamo6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cobrador_prestamo6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(etiPrestamo_c6, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout barraPrestamosLayout = new javax.swing.GroupLayout(barraPrestamos);
-        barraPrestamos.setLayout(barraPrestamosLayout);
-        barraPrestamosLayout.setHorizontalGroup(
-            barraPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(barraPrestamosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(barraPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cobrador_prestamo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cobrador_prestamo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cobrador_prestamo3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cobrador_prestamo4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cobrador_prestamo5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cobrador_prestamo6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        barraPrestamosLayout.setVerticalGroup(
-            barraPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(barraPrestamosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(cobrador_prestamo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cobrador_prestamo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cobrador_prestamo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cobrador_prestamo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cobrador_prestamo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(cobrador_prestamo6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
         panelBackgroundDescripcion.setBackground(new java.awt.Color(254, 250, 224));
 
         etiNombreDeuAsig.setForeground(new java.awt.Color(98, 111, 71));
@@ -369,10 +165,25 @@ public class Cobrador extends javax.swing.JFrame {
         etiTutuloDescripcion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiTutuloDescripcion.setText("DESCRIPCION");
 
-        etiDescripcionPrestamo.setForeground(new java.awt.Color(98, 111, 71));
-        etiDescripcionPrestamo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        etiDescripcionPrestamo.setText("descripcion del prestamo ");
-        etiDescripcionPrestamo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(98, 111, 71)));
+        etiNombrePrestamista.setForeground(new java.awt.Color(98, 111, 71));
+        etiNombrePrestamista.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        etiNombrePrestamista.setText(" Nombre del prestamista: ");
+
+        etiCuotaActual.setForeground(new java.awt.Color(98, 111, 71));
+        etiCuotaActual.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        etiCuotaActual.setText(" Cuota Nro ");
+
+        etiNumeroCueotas.setForeground(new java.awt.Color(98, 111, 71));
+        etiNumeroCueotas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        etiNumeroCueotas.setText(" Numero de cuotas: ");
+
+        etiDireccion.setForeground(new java.awt.Color(98, 111, 71));
+        etiDireccion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        etiDireccion.setText(" Direccion: ");
+
+        etiValorCuota.setForeground(new java.awt.Color(98, 111, 71));
+        etiValorCuota.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        etiValorCuota.setText(" Valor de la cuota: ");
 
         javax.swing.GroupLayout panelDescripcionLayout = new javax.swing.GroupLayout(panelDescripcion);
         panelDescripcion.setLayout(panelDescripcionLayout);
@@ -380,10 +191,16 @@ public class Cobrador extends javax.swing.JFrame {
             panelDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDescripcionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(etiTutuloDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(etiDescripcionPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE))
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addGroup(panelDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelDescripcionLayout.createSequentialGroup()
+                        .addComponent(etiTutuloDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(etiNombrePrestamista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(etiCuotaActual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(etiNumeroCueotas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(etiDireccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(etiValorCuota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         panelDescripcionLayout.setVerticalGroup(
             panelDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -391,8 +208,16 @@ public class Cobrador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(etiTutuloDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(etiDescripcionPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addComponent(etiNombrePrestamista, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(etiNumeroCueotas, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(etiCuotaActual, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(etiValorCuota, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(etiDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         panelTotalPrestamo.setBackground(new java.awt.Color(164, 180, 101));
@@ -408,7 +233,7 @@ public class Cobrador extends javax.swing.JFrame {
             panelTotalPrestamoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelTotalPrestamoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(etiValorTotalPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(etiValorTotalPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelTotalPrestamoLayout.setVerticalGroup(
@@ -424,21 +249,47 @@ public class Cobrador extends javax.swing.JFrame {
         etiTotalDeprestamo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         etiTotalDeprestamo.setText("Total de prestamo");
 
+        jPanel1.setBackground(new java.awt.Color(164, 180, 101));
+
+        etiNombreCobrador.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        etiNombreCobrador.setForeground(new java.awt.Color(98, 111, 71));
+        etiNombreCobrador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiNombreCobrador.setText("Nombre del Cobrador");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(etiNombreCobrador, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(etiNombreCobrador, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout panelBackgroundDescripcionLayout = new javax.swing.GroupLayout(panelBackgroundDescripcion);
         panelBackgroundDescripcion.setLayout(panelBackgroundDescripcionLayout);
         panelBackgroundDescripcionLayout.setHorizontalGroup(
             panelBackgroundDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBackgroundDescripcionLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelBackgroundDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelBackgroundDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(panelBackgroundDescripcionLayout.createSequentialGroup()
-                        .addComponent(panelDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(panelBackgroundDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelTotalPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(etiTotalDeprestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
-                    .addComponent(etiNombreDeuAsig, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12))
+                        .addComponent(etiNombreDeuAsig, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addGroup(panelBackgroundDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(etiTotalDeprestamo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelTotalPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
         panelBackgroundDescripcionLayout.setVerticalGroup(
             panelBackgroundDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -451,7 +302,9 @@ public class Cobrador extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panelTotalPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelBackgroundDescripcionLayout.createSequentialGroup()
-                        .addComponent(etiNombreDeuAsig, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panelBackgroundDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(etiNombreDeuAsig, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panelDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18))
@@ -462,8 +315,6 @@ public class Cobrador extends javax.swing.JFrame {
         bkgCuerpoLayout.setHorizontalGroup(
             bkgCuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bkgCuerpoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(barraPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(panelBackgroundDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -471,13 +322,9 @@ public class Cobrador extends javax.swing.JFrame {
         bkgCuerpoLayout.setVerticalGroup(
             bkgCuerpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bkgCuerpoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(barraPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(bkgCuerpoLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(21, 21, 21)
                 .addComponent(panelBackgroundDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
@@ -501,6 +348,20 @@ public class Cobrador extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        menuBuscar_c.setText("Buscar");
+
+        menuItemBuscarPrestamos.setText("Prestamos");
+        menuItemBuscarPrestamos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuItemBuscarPrestamosMouseClicked(evt);
+            }
+        });
+        menuBuscar_c.add(menuItemBuscarPrestamos);
+
+        jMenuBar1.add(menuBuscar_c);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -521,70 +382,70 @@ public class Cobrador extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_imgVolverMouseClicked
 
+    private void menuItemBuscarPrestamosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuItemBuscarPrestamosMouseClicked
+        // TODO add your handling code here:
+        buscarPrestamos_c abrBuscarPrest = new buscarPrestamos_c(etiNombrePrestamista, etiNumeroCueotas, etiCuotaActual, etiValorCuota, etiDireccion, etiNombreDeuAsig, Deudores);
+        abrBuscarPrest.setVisible(true);
+    }//GEN-LAST:event_menuItemBuscarPrestamosMouseClicked
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    /* Set the Nimbus look and feel */
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+     */
+    try {
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            if ("Nimbus".equals(info.getName())) {
+                javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                break;
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cobrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cobrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cobrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cobrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Cobrador().setVisible(true);
-            }
-        });
+    } catch (ClassNotFoundException ex) {
+        java.util.logging.Logger.getLogger(Cobrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (InstantiationException ex) {
+        java.util.logging.Logger.getLogger(Cobrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (IllegalAccessException ex) {
+        java.util.logging.Logger.getLogger(Cobrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        java.util.logging.Logger.getLogger(Cobrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    //</editor-fold>
+
+    /* Create and display the form */
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            new Cobrador().setVisible(true);
+        }
+    });
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JPanel barraPrestamos;
     private javax.swing.JPanel bkgCuerpo;
     private javax.swing.JPanel bkgHeader;
-    private javax.swing.JPanel cobrador_prestamo1;
-    private javax.swing.JPanel cobrador_prestamo2;
-    private javax.swing.JPanel cobrador_prestamo3;
-    private javax.swing.JPanel cobrador_prestamo4;
-    private javax.swing.JPanel cobrador_prestamo5;
-    private javax.swing.JPanel cobrador_prestamo6;
-    private javax.swing.JLabel etiDescripcionPrestamo;
+    private javax.swing.JLabel etiCuotaActual;
+    private javax.swing.JLabel etiDireccion;
+    private javax.swing.JLabel etiNombreCobrador;
     private javax.swing.JLabel etiNombreDeuAsig;
-    private javax.swing.JLabel etiPrestamo_c1;
-    private javax.swing.JLabel etiPrestamo_c2;
-    private javax.swing.JLabel etiPrestamo_c3;
-    private javax.swing.JLabel etiPrestamo_c4;
-    private javax.swing.JLabel etiPrestamo_c5;
-    private javax.swing.JLabel etiPrestamo_c6;
-    private javax.swing.JLabel etiPrestamos;
+    private javax.swing.JLabel etiNombrePrestamista;
+    private javax.swing.JLabel etiNumeroCueotas;
     private javax.swing.JLabel etiTituloCobrador;
     private javax.swing.JLabel etiTotalDeprestamo;
     private javax.swing.JLabel etiTutuloDescripcion;
+    private javax.swing.JLabel etiValorCuota;
     private javax.swing.JLabel etiValorTotalPrestamo;
     private javax.swing.JLabel imgUsuario;
     private javax.swing.JLabel imgVolver;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu menuBuscar_c;
+    private javax.swing.JMenu menuItemBuscarPrestamos;
     private javax.swing.JPanel panelBackgroundDescripcion;
     private javax.swing.JPanel panelDescripcion;
-    private javax.swing.JPanel panelPrestamos;
     private javax.swing.JPanel panelTitulo;
     private javax.swing.JPanel panelTotalPrestamo;
     private javax.swing.JPanel panelVolver;

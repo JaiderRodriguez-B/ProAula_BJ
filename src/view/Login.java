@@ -237,7 +237,8 @@ public class Login extends javax.swing.JFrame {
             abrir.setVisible(true);
             dispose();
         }else if(cbxRoles.getSelectedItem().equals("Cobrador")){
-            Cobrador abrir = new Cobrador();
+            String CobrName = "--COBRADOR--";//El nombre se debe obtener de los Archivos
+            Cobrador abrir = new Cobrador(CobrName);
             abrir.setVisible(true);
             dispose();
         }
