@@ -19,6 +19,7 @@ public class Prestamo {
     private double Valor_cuotas;
     private int Cantidad_cuotas;
     private double Tasa_interes;
+    private int cuota_actual;
     private Date Fecha_prestamo;
 
     public Prestamo(String ID, double Monto_prestado, Prestamista Prestador, List<Pagos> Abonos, double Valor_cuotas, int Cantidad_cuotas, double Tasa_interes, Date Fecha_prestamo) {
@@ -66,6 +67,14 @@ public class Prestamo {
 
     public double getValor_cuotas() {
         return Valor_cuotas;
+    }
+
+    public int getCuota_actual() {
+        return cuota_actual;
+    }
+
+    public void setCuota_actual(int cuota_actual) {
+        this.cuota_actual = cuota_actual;
     }
 
     public void setValor_cuotas(double Valor_cuotas) {
