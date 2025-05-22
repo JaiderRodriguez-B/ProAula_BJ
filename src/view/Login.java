@@ -56,7 +56,7 @@ public class Login extends javax.swing.JFrame {
         txtUsuario.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 12)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(254, 250, 224));
         txtUsuario.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtUsuario.setText("USUARIO");
+        txtUsuario.setText("Documento");
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsuarioActionPerformed(evt);
@@ -131,6 +131,11 @@ public class Login extends javax.swing.JFrame {
         etiCrearUsuario.setForeground(new java.awt.Color(98, 111, 71));
         etiCrearUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         etiCrearUsuario.setText("Crear nuevo usuario");
+        etiCrearUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                etiCrearUsuarioMouseClicked(evt);
+            }
+        });
 
         cbxRoles.setBackground(new java.awt.Color(98, 111, 71));
         cbxRoles.setFont(new java.awt.Font("Gill Sans Ultra Bold Condensed", 0, 12)); // NOI18N
@@ -243,6 +248,10 @@ public class Login extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_etiIngresarMouseClicked
+
+    private void etiCrearUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_etiCrearUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_etiCrearUsuarioMouseClicked
 
     /**
      * @param args the command line arguments

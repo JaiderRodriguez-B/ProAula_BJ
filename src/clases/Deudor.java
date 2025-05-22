@@ -4,6 +4,7 @@
  */
 package clases;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,15 +15,10 @@ public class Deudor extends Usuario{
     private List<Prestamo> Prestamos;
     private String Palabra_seguridad;
 
-    public Deudor(List<Prestamo> Prestamos, String Palabra_seguridad, String Nombre, String Apellido, String Documento, String Direccion, String Contraseña) {
-        super(Nombre, Apellido, Documento, Direccion, Contraseña);
+    public Deudor(List<Prestamo> Prestamos, String Palabra_seguridad, String Nombre, String Apellido, String Email, String Documento, String Direccion, String Contraseña, Date fechaNacimiento) {
+        super(Nombre, Apellido, Email, Documento, Direccion, Contraseña, fechaNacimiento);
         this.Prestamos = Prestamos;
         this.Palabra_seguridad = Palabra_seguridad;
-    }
-    
-    public Deudor(){
-        super("sin nombre", "sin apellido", "12345678", "sin direccion", "pass123");
-        this.Palabra_seguridad = "sin asignar";
     }
 
     public List<Prestamo> getPrestamos() {

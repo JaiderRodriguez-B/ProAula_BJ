@@ -4,22 +4,28 @@
  */
 package clases;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  *
  * @author PC PERSONAL
  */
-public class Cobrador extends Usuario{
-     private List<Deudor> Deudores;
+public class Cobrador extends Usuario {
+
+    private List<Deudor> Deudores;
 
     public Cobrador(List<Deudor> Deudores) {
+        super(); // Llama al constructor por defecto de Usuario
         this.Deudores = Deudores;
     }
     
-    public Cobrador(String id,String nombre){
-        super();
-        this.Deudores = Deudores;
+    public Cobrador(String id, String nombre) {
+        super(); // Llama al constructor por defecto de Usuario
+        this.setDocumento(id); // Usa el método setter heredado
+        this.setNombre(nombre); // Usa el método setter heredado
+        this.Deudores = new ArrayList<>(); // Inicializa la lista vacía
     }
 
     public List<Deudor> getDeudores() {
@@ -29,7 +35,5 @@ public class Cobrador extends Usuario{
     public void setDeudores(List<Deudor> Deudores) {
         this.Deudores = Deudores;
     }
-     
-     
 
 }

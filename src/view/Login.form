@@ -150,7 +150,7 @@
                   <Color blue="e0" green="fa" red="fe" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="USUARIO"/>
+                <Property name="text" type="java.lang.String" value="Documento"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsuarioActionPerformed"/>
@@ -278,6 +278,9 @@
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Crear nuevo usuario"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="etiCrearUsuarioMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="cbxRoles">
               <Properties>

@@ -4,25 +4,30 @@
  */
 package clases;
 
+import java.util.Date;
+
 /**
  *
  * @author PC PERSONAL
  */
 public class Usuario {
-   
-  private String Nombre;
-  private String Apellido;
-  private String Documento;
-  private String Email;
-  private String Direccion;
-  private String Contraseña;
 
-    public Usuario(String Nombre, String Apellido, String Documento, String Direccion, String Contraseña) {
+    private String Nombre;
+    private String Apellido;
+    private String Documento;
+    private String Email;
+    private String Direccion;
+    private String Contraseña;
+    private Date fechaNacimiento;
+
+    public Usuario(String Nombre, String Apellido, String Documento, String Email, String Direccion, String Contraseña, Date fechaNacimiento) {
         this.Nombre = Nombre;
         this.Apellido = Apellido;
+        this.Email = Email;
         this.Documento = Documento;
         this.Direccion = Direccion;
         this.Contraseña = Contraseña;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public Usuario() {
@@ -32,7 +37,7 @@ public class Usuario {
         Direccion = "sin direccion";
         Contraseña = "pass123";
     }
-  
+
     public String getNombre() {
         return Nombre;
     }
@@ -81,5 +86,20 @@ public class Usuario {
         this.Contraseña = Contraseña;
     }
 
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
 
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public int getEdad() {
+        if (fechaNacimiento == null) {
+            return 0;
+        }
+        Date ahora = new Date();
+        long diffInMillies = Math.abs(ahora.getTime() - fechaNacimiento.getTime());
+        return (int) (diffInMillies / (1000L * 60 * 60 * 24 * 365));
+    }
 }
